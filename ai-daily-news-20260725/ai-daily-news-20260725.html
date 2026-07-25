@@ -4,18 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI 行业日报 - 2026年7月25日</title>
+  <title>AI 行业日报 — 2026年7月25日</title>
+
   <style>
-    @font-face {
-      font-family: 'JetBrainsMono';
-      src: url('./_shared/fonts/JetBrainsMono-Regular.ttf') format('truetype');
-      font-weight: 400;
-    }
-    @font-face {
-      font-family: 'JetBrainsMono';
-      src: url('./_shared/fonts/JetBrainsMono-Bold.ttf') format('truetype');
-      font-weight: 700;
-    }
     @font-face {
       font-family: 'InstrumentSans';
       src: url('./_shared/fonts/InstrumentSans-Regular.ttf') format('truetype');
@@ -27,545 +18,598 @@
       font-weight: 700;
     }
     @font-face {
-      font-family: 'WorkSans';
-      src: url('./_shared/fonts/WorkSans-Regular.ttf') format('truetype');
+      font-family: 'JetBrainsMono';
+      src: url('./_shared/fonts/JetBrainsMono-Regular.ttf') format('truetype');
       font-weight: 400;
     }
-    @font-face {
-      font-family: 'WorkSans';
-      src: url('./_shared/fonts/WorkSans-Bold.ttf') format('truetype');
-      font-weight: 700;
-    }
+  </style>
 
+  <style>
     :root {
-      --bg: #0a0f0d;
-      --bg2: #141b18;
-      --bg3: #1c2420;
-      --ink: #e8ece9;
-      --muted: #7a8a80;
-      --rule: #2a3530;
-      --accent: #4ade80;
-      --accent2: #22d3ee;
-      --accent-dim: rgba(74, 222, 128, 0.12);
-      --accent2-dim: rgba(34, 211, 238, 0.12);
-      --font-heading: 'JetBrainsMono', 'Courier New', monospace;
-      --font-body: 'InstrumentSans', 'WorkSans', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: 'JetBrainsMono', 'Courier New', monospace;
+      --bg: #0c0f1a;
+      --bg2: #151929;
+      --bg3: #1c2137;
+      --ink: #e8eaf0;
+      --muted: #8892a8;
+      --rule: #2a3050;
+      --accent: #00d4aa;
+      --accent2: #6366f1;
+      --accent3: #f59e0b;
+      --red: #ef4444;
+      --font: 'InstrumentSans', -apple-system, 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'JetBrainsMono', monospace;
+      --max: 880px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
     body {
-      background: var(--bg);
+      font-family: var(--font);
       color: var(--ink);
-      font-family: var(--font-body);
-      line-height: 1.7;
-      min-height: 100vh;
+      background: var(--bg);
+      line-height: 1.75;
+      padding: 2rem 1rem;
     }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 960px;
+    article.page {
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 0 1.5rem;
     }
 
-    /* Header */
-    header {
-      padding: 3rem 0 2rem;
+    /* === Masthead === */
+    .masthead {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2.5rem 0;
       border-bottom: 1px solid var(--rule);
     }
-    .header-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .brand {
-      font-family: var(--font-heading);
-      font-size: 0.85rem;
-      color: var(--accent);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-    .date-badge {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--muted);
-      background: var(--bg2);
-      padding: 0.35rem 0.75rem;
-      border-radius: 4px;
-      border: 1px solid var(--rule);
-    }
-    h1 {
-      font-family: var(--font-heading);
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-top: 1rem;
-      letter-spacing: -0.02em;
-    }
-    h1 span {
-      color: var(--accent);
-    }
-    .subtitle {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-top: 0.5rem;
-      max-width: 600px;
-    }
-
-    /* Market bar */
-    .market-bar {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-      padding: 1.25rem;
-      background: var(--bg2);
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-    }
-    .market-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-    .market-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .market-value {
-      font-family: var(--font-mono);
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-    .market-value.up {
-      color: var(--accent);
-    }
-    .market-value.down {
-      color: #f87171;
-    }
-    .market-note {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    /* Section headings */
-    .section-title {
-      font-family: var(--font-heading);
-      font-size: 0.9rem;
-      color: var(--accent);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin: 3rem 0 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .section-title::before {
-      content: '';
+    .masthead .date-tag {
       display: inline-block;
-      width: 24px;
-      height: 2px;
       background: var(--accent);
+      color: var(--bg);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.75rem;
+      border-radius: 999px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .masthead h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .masthead .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
-    /* News cards */
-    .card-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
+    /* === News Card === */
     .news-card {
       background: var(--bg2);
       border: 1px solid var(--rule);
-      border-radius: 10px;
-      padding: 1.5rem;
-      transition: border-color 0.2s, transform 0.2s;
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.2s;
+      position: relative;
     }
     .news-card:hover {
       border-color: var(--accent);
-      transform: translateY(-2px);
     }
-    .card-header {
+    .news-card .card-header {
       display: flex;
-      justify-content: space-between;
       align-items: flex-start;
       gap: 1rem;
-      margin-bottom: 0.75rem;
-      flex-wrap: wrap;
+      margin-bottom: 0.8rem;
     }
-    .card-tags {
+    .news-card .rank {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
       display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .tag {
-      font-size: 0.7rem;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent);
+      color: var(--bg);
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      background: var(--accent-dim);
-      color: var(--accent);
+      font-size: 0.9rem;
+      border-radius: 8px;
     }
-    .tag.accent2 {
-      background: var(--accent2-dim);
-      color: var(--accent2);
-    }
-    .tag.important {
-      background: rgba(248, 113, 113, 0.15);
-      color: #f87171;
-    }
-    .card-source {
-      font-size: 0.75rem;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-    .news-card h3 {
-      font-family: var(--font-body);
-      font-size: 1.15rem;
+    .news-card .card-title-area { flex: 1; }
+    .news-card h2 {
+      font-size: 1.25rem;
       font-weight: 700;
-      margin-bottom: 0.75rem;
-      line-height: 1.4;
-    }
-    .news-card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-    .news-card p strong {
       color: var(--ink);
-      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.3rem;
     }
-    mark.key {
-      background: none;
-      color: var(--accent);
-      font-weight: 600;
+    .news-card .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.8rem;
     }
+    .news-card .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+    }
+    .tag.product { background: #1e3a5f; color: #60a5fa; }
+    .tag.funding { background: #2d1f0e; color: #f59e0b; }
+    .tag.tech { background: #1a2e1a; color: #4ade80; }
+    .tag.policy { background: #2d1a3e; color: #c084fc; }
+    .tag.market { background: #3b1a1a; color: #f87171; }
+    .tag.chip { background: #1a2d3e; color: #67e8f9; }
 
-    /* Tooltip for jargon */
+    .news-card .summary {
+      font-size: 0.95rem;
+      color: var(--ink);
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+    }
+    .news-card .source {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+    }
+    .news-card .source a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .news-card .source a:hover { text-decoration: underline; }
+
+    /* === Tooltip / Hover Explanation === */
     .jargon {
       position: relative;
       border-bottom: 1px dashed var(--accent);
       cursor: help;
       color: var(--accent);
+      font-weight: 600;
     }
     .jargon::after {
       content: attr(data-tip);
       position: absolute;
-      bottom: 125%;
+      bottom: calc(100% + 8px);
       left: 50%;
       transform: translateX(-50%);
       background: var(--bg3);
+      border: 1px solid var(--accent);
       color: var(--ink);
+      font-size: 0.78rem;
+      font-weight: 400;
       padding: 0.5rem 0.75rem;
-      border-radius: 6px;
-      border: 1px solid var(--rule);
-      font-size: 0.8rem;
-      white-space: nowrap;
+      border-radius: 8px;
+      white-space: normal;
+      width: 260px;
+      line-height: 1.5;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.2s;
       z-index: 10;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
-    .jargon:hover::after {
+    .jargon::before {
+      content: '';
+      position: absolute;
+      bottom: calc(100% + 2px);
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: var(--accent);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      z-index: 10;
+    }
+    .jargon:hover::after,
+    .jargon:hover::before {
       opacity: 1;
     }
 
-    /* Commentary */
-    .commentary {
+    /* === Trend & Insight Section === */
+    .insight-section {
+      background: linear-gradient(135deg, var(--bg2), var(--bg3));
+      border: 1px solid var(--accent2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    .insight-section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent2);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .insight-section p {
+      font-size: 0.95rem;
+      color: var(--ink);
+      line-height: 1.8;
+      margin-bottom: 0.8rem;
+    }
+    .insight-section .advice-box {
+      background: rgba(99, 102, 241, 0.12);
+      border-left: 3px solid var(--accent2);
+      padding: 1rem 1.2rem;
+      border-radius: 0 8px 8px 0;
+      margin-top: 1rem;
+    }
+    .insight-section .advice-box strong {
+      color: var(--accent2);
+    }
+
+    /* === Market Data Strip === */
+    .market-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .market-strip .metric {
       background: var(--bg2);
       border: 1px solid var(--rule);
       border-radius: 10px;
-      padding: 1.5rem;
-      margin-top: 2rem;
+      padding: 1rem 1.2rem;
+      text-align: center;
     }
-    .commentary h2 {
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      letter-spacing: 0.05em;
-    }
-    .commentary p {
+    .market-strip .metric .label {
+      font-size: 0.72rem;
       color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.3rem;
     }
-    .commentary p:last-child {
-      margin-bottom: 0;
+    .market-strip .metric .value {
+      font-size: 1.35rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+    .market-strip .metric .value.up { color: #4ade80; }
+    .market-strip .metric .value.down { color: var(--red); }
+    .market-strip .metric .value.neutral { color: var(--ink); }
+    .market-strip .metric .note {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
     }
 
-    /* Sources */
-    footer {
-      margin-top: 3rem;
-      padding: 2rem 0 3rem;
+    /* === Sources footer === */
+    footer .sources {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
       border-top: 1px solid var(--rule);
     }
-    footer h2 {
-      font-family: var(--font-heading);
+    footer .sources h2 {
       font-size: 1rem;
-      color: var(--accent);
+      font-weight: 700;
+      color: var(--muted);
       margin-bottom: 1rem;
-      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
     footer .sources ol {
       padding-left: 1.2rem;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--muted);
+      list-style: none;
+      counter-reset: cite;
     }
     footer .sources li {
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       overflow-wrap: break-word;
       word-break: break-all;
+      counter-increment: cite;
+    }
+    footer .sources li::before {
+      content: "[" counter(cite) "] ";
+      color: var(--accent);
+      font-weight: 700;
     }
     footer .sources .src-title {
       color: var(--ink);
-      word-break: normal;
     }
     footer .sources .src-url {
       display: block;
-      margin-top: 0.15rem;
-      font-size: 0.82rem;
+      margin-top: 0.1rem;
+      font-size: 0.78rem;
       color: var(--accent);
       word-break: break-all;
     }
     footer .sources a {
-      word-break: break-all;
-    }
-
-    sup a {
       color: var(--accent);
       text-decoration: none;
-      font-size: 0.75em;
-      font-weight: 600;
     }
-    sup a:hover {
-      text-decoration: underline;
+    footer .sources a:hover { text-decoration: underline; }
+
+    /* === Divider === */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2.5rem 0 1.5rem;
+    }
+    .section-divider .line { flex: 1; height: 1px; background: var(--rule); }
+    .section-divider .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
     }
 
-    /* Responsive */
+    /* === Responsive === */
     @media (max-width: 600px) {
-      h1 { font-size: 1.6rem; }
-      .market-bar { gap: 1rem; }
-      .news-card { padding: 1.25rem; }
-      .jargon::after {
-        white-space: normal;
-        width: 220px;
-      }
+      .masthead h1 { font-size: 1.7rem; }
+      .news-card { padding: 1.2rem 1rem; }
+      .news-card .rank { width: 28px; height: 28px; font-size: 0.8rem; }
+      .news-card h2 { font-size: 1.05rem; }
+      .market-strip { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="header-top">
-        <div class="brand">AI Daily News</div>
-        <div class="date-badge">2026-07-25</div>
-      </div>
-      <h1>AI 行业日报 <span>// 2026.07.25</span></h1>
-      <p class="subtitle">每日精选人工智能领域最重要的产品动态、融资事件、技术突破与政策监管。</p>
+  <article class="page">
 
-      <div class="market-bar">
-        <div class="market-item">
-          <span class="market-label">现货黄金</span>
-          <span class="market-value up">$4,028</span>
-          <span class="market-note">守住4000关口</span>
-        </div>
-        <div class="market-item">
-          <span class="market-label">AMD</span>
-          <span class="market-value down">-3.53%</span>
-          <span class="market-note">AI芯片板块回调</span>
-        </div>
-        <div class="market-item">
-          <span class="market-label">Intel</span>
-          <span class="market-value down">-5.84%</span>
-          <span class="market-note">财报后承压</span>
-        </div>
-        <div class="market-item">
-          <span class="market-label">Marvell</span>
-          <span class="market-value down">-8.71%</span>
-          <span class="market-note">AI硬件抛售</span>
-        </div>
-        <div class="market-item">
-          <span class="market-label">台积电 Q2</span>
-          <span class="market-value up">净利+77%</span>
-          <span class="market-note">利润率60.3%</span>
-        </div>
-        <div class="market-item">
-          <span class="market-label">Etched 估值</span>
-          <span class="market-value up">$10.3B</span>
-          <span class="market-note">C轮3亿美元</span>
-        </div>
-      </div>
+    <!-- Masthead -->
+    <header class="masthead">
+      <div class="date-tag">2026 / 07 / 25</div>
+      <h1>AI 行业日报</h1>
+      <p class="subtitle">产品发布 · 融资并购 · 技术突破 · 行业规范 · 市场动态</p>
     </header>
 
+    <!-- Market Data Strip -->
+    <div class="market-strip">
+      <div class="metric">
+        <div class="label">现货黄金</div>
+        <div class="value up">$4,028</div>
+        <div class="note">守住4000关口</div>
+      </div>
+      <div class="metric">
+        <div class="label">AMD</div>
+        <div class="value down">-3.53%</div>
+        <div class="note">AI芯片板块回调</div>
+      </div>
+      <div class="metric">
+        <div class="label">Intel</div>
+        <div class="value down">-5.84%</div>
+        <div class="note">财报后承压</div>
+      </div>
+      <div class="metric">
+        <div class="label">Marvell</div>
+        <div class="value down">-8.71%</div>
+        <div class="note">AI硬件抛售</div>
+      </div>
+      <div class="metric">
+        <div class="label">台积电 Q2</div>
+        <div class="value up">净利+77%</div>
+        <div class="note">利润率60.3%</div>
+      </div>
+      <div class="metric">
+        <div class="label">Etched 估值</div>
+        <div class="value up">$10.3B</div>
+        <div class="note">C轮3亿美元</div>
+      </div>
+    </div>
+
     <main>
-      <div class="section-title">今日焦点</div>
-      <div class="card-grid">
 
-        <article class="news-card">
-          <div class="card-header">
-            <div class="card-tags">
-              <span class="tag important">重磅</span>
-              <span class="tag">并购</span>
-            </div>
-            <span class="card-source">AK&M / 2026-07-25</span>
+      <!-- News 1 -->
+      <div class="news-card">
+        <div class="card-header">
+          <div class="rank">1</div>
+          <div class="card-title-area">
+            <h2>Elon Musk 财团出价 974 亿美元收购 OpenAI 控制权</h2>
           </div>
-          <h3>Elon Musk 财团出价 974 亿美元收购 OpenAI 控制权</h3>
-          <p>Elon Musk 领导的财团（包括 xAI、Valor Equity Partners、Baron Capital 等）向控制 OpenAI 的非营利组织提出 <strong>974 亿美元</strong> 收购要约。此举旨在阻止 OpenAI 转为商业公司，若交易成功，xAI 可能与 OpenAI 合并。目前 OpenAI 正洽谈以 3000 亿美元估值融资 400 亿美元，SoftBank 参与谈判。<sup><a href="#cite-1">[1]</a></sup></p>
-        </article>
-
-        <article class="news-card">
-          <div class="card-header">
-            <div class="card-tags">
-              <span class="tag accent2">产品</span>
-              <span class="tag">健康</span>
-            </div>
-            <span class="card-source">OpenAI / 2026-07-23</span>
-          </div>
-          <h3>OpenAI 推出 ChatGPT Health：个人健康数据进入长期上下文</h3>
-          <p>OpenAI 向美国 18 岁以上登录用户推出 <strong>ChatGPT Health</strong>，覆盖 Free、Go、Plus 和 Pro 计划。用户可选择连接 Apple Health 及部分美国医院系统的医疗记录，ChatGPT 将基于个人健康上下文回答问题。OpenAI 称每周超 3 亿人在 ChatGPT 上询问健康问题。<sup><a href="#cite-2">[2]</a></sup></p>
-        </article>
-
-        <article class="news-card">
-          <div class="card-header">
-            <div class="card-tags">
-              <span class="tag accent2">产品</span>
-              <span class="tag">语音</span>
-            </div>
-            <span class="card-source">Gadgets 360 / 2026-07-24</span>
-          </div>
-          <h3>Anthropic 扩展 Claude 语音模式：支持 Opus、Sonnet 及 Google 生态</h3>
-          <p>Claude 语音模式迎来重大 Beta 更新，新增对 <strong>Opus 和 Sonnet</strong> 模型的支持。用户可在语音对话中直接访问 Gmail、Google Calendar、Google Docs、Slack 和网页搜索，无需切换回文本模式。语音与文本对话上下文无缝衔接。<sup><a href="#cite-3">[3]</a></sup></p>
-        </article>
-
-        <article class="news-card">
-          <div class="card-header">
-            <div class="card-tags">
-              <span class="tag accent2">产品</span>
-              <span class="tag">Agent</span>
-            </div>
-            <span class="card-source">Superintelligence News / 2026-07-24</span>
-          </div>
-          <h3>Meta AI 升级为个人助理：日历、任务简报与持续执行</h3>
-          <p>Meta 大幅升级 Meta AI，使其具备个人助理能力：接入用户日历生成每日简报、协助规划活动、执行周期性任务（如每周膳食计划）而无需重复提示。新功能由 <strong>Muse Spark 1.1</strong> 模型驱动，标志着 Meta 从"娱乐优先"转向"生产力+生活"双轨战略。<sup><a href="#cite-4">[4]</a></sup></p>
-        </article>
-
-        <article class="news-card">
-          <div class="card-header">
-            <div class="card-tags">
-              <span class="tag">融资</span>
-              <span class="tag">芯片</span>
-            </div>
-            <span class="card-source">TechStartups / 2026-07-23</span>
-          </div>
-          <h3>Etched 完成 3 亿美元 C 轮融资，估值 103 亿美元</h3>
-          <p>AI 推理芯片公司 Etched 完成 <strong>3 亿美元 C 轮</strong>融资，Sequoia 领投，a16z、Jane Street、SK hynix 跟投，估值达 <strong>103 亿美元</strong>。公司称已获 10 亿美元订单并完成首批芯片制造，专注为 <span class="jargon" data-tip="AI模型运行阶段，将训练好的模型用于实际预测">推理</span> 工作负载提供专用芯片，直接对标 NVIDIA。<sup><a href="#cite-5">[5]</a></sup></p>
-        </article>
-
-        <article class="news-card">
-          <div class="card-header">
-            <div class="card-tags">
-              <span class="tag">融资</span>
-              <span class="tag">机器人</span>
-            </div>
-            <span class="card-source">TechStartups / 2026-07-23</span>
-          </div>
-          <h3>Humanoid 融资 1.52 亿美元，成为欧洲首家人形机器人独角兽</h3>
-          <p>伦敦人形机器人公司 Humanoid 完成 <strong>1.52 亿美元 A 轮</strong>融资，估值 13.5 亿美元，由 Prime Movers Lab 领投，<span class="jargon" data-tip="德国工业巨头，轴承和汽车零配件制造商">Schaeffler</span>、<span class="jargon" data-tip="德国工业技术和工程公司">Bosch</span> 等战略投资方参与。公司计划 2026 年底在物流和制造业部署轮式人形机器人，是欧洲最大的人形机器人首轮融资。<sup><a href="#cite-6">[6]</a></sup></p>
-        </article>
-
-        <article class="news-card">
-          <div class="card-header">
-            <div class="card-tags">
-              <span class="tag accent2">技术</span>
-              <span class="tag">论文</span>
-            </div>
-            <span class="card-source">arXiv / 2026-07</span>
-          </div>
-          <h3>Red Queen Gödel Machine：自我改进 AI 的新路径</h3>
-          <p>剑桥大学研究团队发布 <strong>"Red Queen Gödel Machine"</strong> 框架，通过让 AI 代理与其评估器共同进化，实现自主能力提升。该方法借鉴生态学的 <span class="jargon" data-tip="在进化生物学中，物种必须不断进化才能维持相对地位">红皇后假说</span>，在多项任务中取得显著成果，为构建自我改进的 AI 系统提供了新范式。<sup><a href="#cite-7">[7]</a></sup></p>
-        </article>
-
-        <article class="news-card">
-          <div class="card-header">
-            <div class="card-tags">
-              <span class="tag">政策</span>
-              <span class="tag">治理</span>
-            </div>
-            <span class="card-source">中国发改委 / 2026-07-17</span>
-          </div>
-          <h3>中国发布《人工智能合作发展行动计划》</h3>
-          <p>国家发改委会同有关部门在 2026 世界人工智能大会上发布行动计划，提出"安全治理协作"行动，构建多边协同的风险研判、分级管理、技术追溯与国际合作机制。该计划为防范 AI 技术滥用提供了系统性保障框架，涵盖全域风险研判与应对体系。<sup><a href="#cite-8">[8]</a></sup></p>
-        </article>
-
+        </div>
+        <div class="tag-row">
+          <span class="tag funding">融资并购</span>
+          <span class="tag market">重磅</span>
+        </div>
+        <p class="summary">
+          Elon Musk 领导的财团（包括 <span class="jargon" data-tip="xAI：Elon Musk于2023年创立的AI公司，致力于开发先进的生成式AI模型，与OpenAI形成直接竞争">xAI</span>、Valor Equity Partners、Baron Capital、Atreides Management、Vy Capital、8VC 等）向控制 OpenAI 的非营利组织提出 <strong>974 亿美元</strong> 收购要约。此举旨在阻止 OpenAI 转为商业公司，若交易成功，xAI 可能与 OpenAI 合并。目前 OpenAI 正洽谈以 <strong>3000 亿美元</strong> 估值融资 <strong>400 亿美元</strong>，SoftBank 参与谈判。Musk 与 OpenAI CEO Sam Altman 之间关于 AI 发展方向的长期分歧是此次收购提议的核心背景。
+        </p>
+        <p class="source">来源：<a href="https://www.akm.ru/eng/news/elon-musk-offers-97-4-billion-for-control-of-ai-startup-openai/" target="_blank" rel="noopener">AK&M</a>、<a href="https://techstartups.com/2026/07/23/venture-capital-startup-funding-roundup-july-23-2026/" target="_blank" rel="noopener">TechStartups</a></p>
       </div>
 
-      <div class="commentary">
-        <h2>趋势点评</h2>
-        <p><strong>AI 助手从"聊天工具"进化为"个人操作系统"。</strong>本周 OpenAI Health、Anthropic 语音模式扩展、Meta AI 个人助理三大更新，标志着头部厂商正将 AI 从对话界面推向深度整合用户数据与日程的"超级助理"形态。健康数据与日历权限的开放，意味着 AI 正在获取用户最核心的个人数据资产，隐私与便利的博弈将进一步加剧。</p>
-        <p><strong>资本向"物理 AI"和"推理基础设施"集中。</strong>Etched（103 亿美元估值）和 Humanoid（欧洲首家人形独角兽）的巨额融资显示，投资者正从通用大模型应用层向下游转移：专用推理芯片和实体机器人成为新热点。台积电 Q2 净利润增长 77% 也印证了这一趋势，但二级市场 AI 芯片股（AMD、Intel、Marvell）同步大跌，反映市场对估值过热的担忧。</p>
-        <p><strong>建议关注：</strong>AI 推理优化赛道、具备医疗/工业数据壁垒的垂直应用、以及中美欧 AI 监管框架的差异化演进带来的合规机会。</p>
+      <!-- News 2 -->
+      <div class="news-card">
+        <div class="card-header">
+          <div class="rank">2</div>
+          <div class="card-title-area">
+            <h2>OpenAI 推出 ChatGPT Health：个人健康数据进入长期上下文</h2>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag product">产品发布</span>
+          <span class="tag tech">健康</span>
+        </div>
+        <p class="summary">
+          OpenAI 于 7 月 23 日推出 <strong>ChatGPT Health</strong>，向美国 18 岁以上登录用户开放（覆盖 Free、Go、Plus 和 Pro 计划）。用户可选择连接 <span class="jargon" data-tip="Apple Health：苹果公司的健康数据平台，汇集iPhone、Apple Watch等设备的健康与运动数据">Apple Health</span> 及部分美国医院系统的医疗记录（包括 One Medical、Function Health 等），ChatGPT 将基于个人健康上下文回答问题。OpenAI 称每周超 <strong>3 亿人</strong>在 ChatGPT 上询问健康问题。这是消费级 AI 首次切入高度监管的医疗健康领域，数据隐私与模型能力之间的平衡将成为行业焦点。
+        </p>
+        <p class="source">来源：<a href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">OpenAI官方博客</a>、<a href="https://www.gadgets360.com/ai/news/chatgpt-health-launch-openai-apple-health-medical-records-access-news-11815426" target="_blank" rel="noopener">Gadgets 360</a></p>
       </div>
+
+      <!-- News 3 -->
+      <div class="news-card">
+        <div class="card-header">
+          <div class="rank">3</div>
+          <div class="card-title-area">
+            <h2>Anthropic 扩展 Claude 语音模式：支持 Opus、Sonnet 及 Google 生态整合</h2>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag product">产品发布</span>
+          <span class="tag tech">语音</span>
+        </div>
+        <p class="summary">
+          Claude 语音模式迎来重大 Beta 更新，新增对 <strong>Opus 和 Sonnet</strong> 模型的支持，不再局限于早期的 Haiku 模型。用户可在语音对话中直接访问 Gmail、Google Calendar、Google Docs、Slack 和网页搜索，无需切换回文本模式。更新还支持语音与文本对话的无缝切换，并保留跨模式上下文。这标志着 Anthropic 正将 Claude 从对话工具升级为能够深度整合用户工作流的 <span class="jargon" data-tip="AI Agent：能够自主执行任务、调用工具并与外部环境交互的AI系统，区别于只能被动回答问题的聊天机器人">AI Agent</span>。
+        </p>
+        <p class="source">来源：<a href="https://www.gadgets360.com/ai/news/anthropic-expands-claude-voice-mode-with-opus-sonnet-ai-models-news-11817317" target="_blank" rel="noopener">Gadgets 360</a></p>
+      </div>
+
+      <!-- News 4 -->
+      <div class="news-card">
+        <div class="card-header">
+          <div class="rank">4</div>
+          <div class="card-title-area">
+            <h2>Meta AI 升级为个人助理：日历、任务简报与持续执行</h2>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag product">产品发布</span>
+          <span class="tag tech">Agent</span>
+        </div>
+        <p class="summary">
+          Meta 大幅升级 Meta AI，使其具备个人助理能力：接入用户日历生成每日简报、协助规划活动、执行周期性任务（如每周膳食计划、商品补货提醒）而无需重复提示。新功能由 <strong>Muse Spark 1.1</strong> 模型驱动，支持在生成过程中实时调整方向。这标志着 Meta 从"娱乐优先"转向"生产力+生活"双轨战略，与 Google、OpenAI 和 Anthropic 的 AI 助理产品直接竞争。Meta 将此称为向 <span class="jargon" data-tip="个人超级智能：指能够深度理解个人需求、主动协助完成复杂任务的AI系统，是Meta CEO Mark Zuckerberg提出的长期愿景">个人超级智能</span> 迈出的又一步。
+        </p>
+        <p class="source">来源：<a href="https://superintelligencenews.com/ai-fields/large-language-models/meta-ai-assistant-calendar-task-tools/" target="_blank" rel="noopener">Superintelligence News</a></p>
+      </div>
+
+      <!-- News 5 -->
+      <div class="news-card">
+        <div class="card-header">
+          <div class="rank">5</div>
+          <div class="card-title-area">
+            <h2>Etched 完成 3 亿美元 C 轮融资，估值达 103 亿美元</h2>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag funding">融资</span>
+          <span class="tag chip">芯片</span>
+        </div>
+        <p class="summary">
+          AI 推理芯片公司 <strong>Etched</strong> 完成 <strong>3 亿美元 C 轮</strong>融资，Sequoia 领投，a16z、Jane Street、SK hynix 跟投，估值达 <strong>103 亿美元</strong>。公司称已获 <strong>10 亿美元</strong>订单并完成首批芯片制造，专注为 <span class="jargon" data-tip="推理（Inference）：AI模型运行阶段，将训练好的模型用于实际预测和生成输出，与训练（Training）相对">推理</span> 工作负载提供专用芯片，直接对标 NVIDIA。此轮融资显示，尽管二级市场 AI 芯片股波动剧烈，资本市场对专用推理芯片赛道仍保持高度热情。
+        </p>
+        <p class="source">来源：<a href="https://techstartups.com/2026/07/23/venture-capital-startup-funding-roundup-july-23-2026/" target="_blank" rel="noopener">TechStartups</a>、<a href="https://techstartups.com/2026/07/23/etched-ai-chip-startup-founded-by-college-dropouts-raises-300m-at-10-3b-valuation-to-take-on-nvidia/" target="_blank" rel="noopener">Reuters via TechStartups</a></p>
+      </div>
+
+      <!-- News 6 -->
+      <div class="news-card">
+        <div class="card-header">
+          <div class="rank">6</div>
+          <div class="card-title-area">
+            <h2>Humanoid 融资 1.52 亿美元，成为欧洲首家人形机器人独角兽</h2>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag funding">融资</span>
+          <span class="tag tech">机器人</span>
+        </div>
+        <p class="summary">
+          伦敦人形机器人公司 <strong>Humanoid</strong> 完成 <strong>1.52 亿美元 A 轮</strong>融资，估值 <strong>13.5 亿美元</strong>，由 Prime Movers Lab 领投，<span class="jargon" data-tip="Schaeffler：德国工业巨头，全球领先的轴承和汽车零配件制造商">Schaeffler</span>、<span class="jargon" data-tip="Bosch：德国工业技术和工程公司，全球最大的汽车零部件供应商之一">Bosch</span> 等战略投资方参与。公司计划 2026 年底在物流和制造业部署轮式人形机器人。这是欧洲首家人形机器人独角兽，也是欧洲最大的人形机器人首轮融资，标志着物理 AI 正从研究叙事进入工业采购周期。
+        </p>
+        <p class="source">来源：<a href="https://techstartups.com/2026/07/21/humanoid-raises-152m-at-1-35b-valuation-to-build-ai-powered-industrial-humanoid-robots/" target="_blank" rel="noopener">TechStartups</a>、<a href="https://techstartups.com/2026/07/23/venture-capital-startup-funding-roundup-july-23-2026/" target="_blank" rel="noopener">Business Wire via TechStartups</a></p>
+      </div>
+
+      <!-- News 7 -->
+      <div class="news-card">
+        <div class="card-header">
+          <div class="rank">7</div>
+          <div class="card-title-area">
+            <h2>Red Queen Gödel Machine：自我改进 AI 的新路径</h2>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag tech">技术突破</span>
+          <span class="tag tech">论文</span>
+        </div>
+        <p class="summary">
+          剑桥大学研究团队发布 <strong>"Red Queen Gödel Machine"</strong> 框架，通过让 AI 代理与其评估器共同进化，实现自主能力提升。该方法借鉴生态学的 <span class="jargon" data-tip="红皇后假说：在进化生物学中，物种必须不断进化才能维持相对生存地位，比喻不进则退的竞争动态">红皇后假说</span>，在多项任务中取得显著成果。该系统同时搜索更优的 AI 代理版本和改进评估代理性能的评判标准，为构建自我改进的 AI 系统提供了新范式。论文已上传至 arXiv。
+        </p>
+        <p class="source">来源：<a href="https://www.cst.cam.ac.uk/news/red-queen-hypothesis-new-way-forward-self-improving-ai" target="_blank" rel="noopener">University of Cambridge</a></p>
+      </div>
+
+      <!-- News 8 -->
+      <div class="news-card">
+        <div class="card-header">
+          <div class="rank">8</div>
+          <div class="card-title-area">
+            <h2>中国发布《人工智能合作发展行动计划》</h2>
+          </div>
+        </div>
+        <div class="tag-row">
+          <span class="tag policy">行业规范</span>
+          <span class="tag policy">治理</span>
+        </div>
+        <p class="summary">
+          国家发改委会同有关部门在 2026 世界人工智能大会上发布《人工智能合作发展行动计划》，提出"安全治理协作"行动，构建多边协同的风险研判、分级管理、技术追溯与国际合作机制。该计划为防范 AI 技术滥用提供了系统性保障框架，涵盖全域风险研判与应对体系。与此同时，全球 AI 监管持续加速：美国 FRONTIER Act 推进联邦层面 AI 监管立法，Google 提议成立 <span class="jargon" data-tip="FARO：Frontier Regulatory Organisation，Google建议成立的独立前沿AI监管机构，负责制定安全标准并验证自愿性审计">FARO</span> 前沿 AI 监管机构，欧盟 AI Act 数字综合修正案已最终获批。
+        </p>
+        <p class="source">来源：<a href="https://k.sina.cn/article_7879996057_1d5af329906801ww70.html" target="_blank" rel="noopener">新浪财经</a>、<a href="https://cubbbix.com/blog/ai-regulation-july-2026-global-update/" target="_blank" rel="noopener">Cubbbix</a>、<a href="https://aibulletin.ai/p/australia-s-updated-responsible-ai-in-government-policy-and-google-proposes-frontier-ai-safety-frame" target="_blank" rel="noopener">AI Bulletin</a></p>
+      </div>
+
     </main>
 
+    <!-- Trend & Investment Insight -->
+    <div class="section-divider">
+      <div class="line"></div>
+      <div class="label">今日趋势与投资建议</div>
+      <div class="line"></div>
+    </div>
+
+    <section class="insight-section">
+      <h2>趋势点评</h2>
+      <p>
+        今日AI行业呈现三条主线交织：<strong>AI助手进化为"个人操作系统"</strong>（OpenAI Health、Anthropic语音模式扩展、Meta AI个人助理三大更新，标志着头部厂商正将AI从对话界面推向深度整合用户数据与日程的"超级助理"形态）、<strong>资本向"物理AI"和"推理基础设施"集中</strong>（Etched估值103亿美元、Humanoid成欧洲首家人形独角兽，投资者从通用大模型应用层向下游转移）、<strong>二级市场估值修正</strong>（AMD、Intel、Marvell同步大跌，反映市场对AI芯片估值过热的担忧）。
+      </p>
+      <p>
+        台积电Q2净利润飙涨77%与AI芯片股大跌并存的矛盾现象，揭示了一个关键信号：即使基本面强劲，市场对AI投资回报率的分歧正在加剧。Musk 974亿美元收购OpenAI要约则成为本轮AI巨头控制权争夺的最戏剧性事件。
+      </p>
+      <div class="advice-box">
+        <strong>投资建议：</strong>短期谨慎对待半导体高估值标的，关注现金流稳健的AI芯片龙头及避险资产（黄金）；中期布局AI推理优化赛道、具备医疗/工业数据壁垒的垂直应用，这两个领域正处于技术成熟与商业化交汇点；长期需建立AI合规能力储备，随着中美欧监管框架差异化演进，AI审计与合规服务将成为新兴需求赛道。
+      </div>
+    </section>
+
+    <!-- Sources -->
     <footer>
       <div class="sources">
-        <h2>信息来源</h2>
+        <h2>Sources</h2>
         <ol>
           <li id="cite-1">
-            <span class="src-title">AK&M, "Elon Musk offers $97.4 billion for control of AI startup OpenAI". 2026-07-25.</span>
-            <a class="src-url" href="https://www.akm.ru/eng/news/elon-musk-offers-97-4-billion-for-control-of-ai-startup-openai/" target="_blank" rel="noopener">https://www.akm.ru/eng/news/elon-musk-offers-97-4-billion-for-control-of-ai-startup-openai/</a>
+            <span class="src-title">AK&M — Elon Musk offers $97.4 billion for control of AI startup OpenAI. 2026-07-25。</span>
+            <a class="src-url" href="https://www.akm.ru/eng/news/elon-musk-offers-97-4-billion-for-control-of-ai-startup-openai/" target="_blank" rel="noopener">akm.ru</a>
           </li>
           <li id="cite-2">
-            <span class="src-title">OpenAI, "Launching Health in ChatGPT". Official Blog. 2026-07-23.</span>
-            <a class="src-url" href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">https://openai.com/index/health-in-chatgpt/</a>
+            <span class="src-title">OpenAI — Launching Health in ChatGPT. 官方产品发布说明，2026-07-23。</span>
+            <a class="src-url" href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">openai.com</a>
           </li>
           <li id="cite-3">
-            <span class="src-title">Gadgets 360, "Anthropic Expands Claude Voice Mode With Opus, Sonnet AI Models". 2026-07-24.</span>
-            <a class="src-url" href="https://www.gadgets360.com/ai/news/anthropic-expands-claude-voice-mode-with-opus-sonnet-ai-models-news-11817317" target="_blank" rel="noopener">https://www.gadgets360.com/ai/news/anthropic-expands-claude-voice-mode-with-opus-sonnet-ai-models-news-11817317</a>
+            <span class="src-title">Gadgets 360 — Anthropic Expands Claude Voice Mode With Opus, Sonnet AI Models. 2026-07-24。</span>
+            <a class="src-url" href="https://www.gadgets360.com/ai/news/anthropic-expands-claude-voice-mode-with-opus-sonnet-ai-models-news-11817317" target="_blank" rel="noopener">gadgets360.com</a>
           </li>
           <li id="cite-4">
-            <span class="src-title">Superintelligence News, "Meta turns its AI chatbot toward calendars, tasks and daily briefs". 2026-07-24.</span>
-            <a class="src-url" href="https://superintelligencenews.com/ai-fields/large-language-models/meta-ai-assistant-calendar-task-tools/" target="_blank" rel="noopener">https://superintelligencenews.com/ai-fields/large-language-models/meta-ai-assistant-calendar-task-tools/</a>
+            <span class="src-title">Superintelligence News — Meta turns its AI chatbot toward calendars, tasks and daily briefs. 2026-07-24。</span>
+            <a class="src-url" href="https://superintelligencenews.com/ai-fields/large-language-models/meta-ai-assistant-calendar-task-tools/" target="_blank" rel="noopener">superintelligencenews.com</a>
           </li>
           <li id="cite-5">
-            <span class="src-title">TechStartups / Reuters, "Etched raises $300 million to scale frontier inference hardware". 2026-07-23.</span>
-            <a class="src-url" href="https://techstartups.com/2026/07/23/venture-capital-startup-funding-roundup-july-23-2026-accel-andreessen-horowitz-battery-ventures-iconiq-jane-street-sequoia-more/" target="_blank" rel="noopener">https://techstartups.com/2026/07/23/venture-capital-startup-funding-roundup-july-23-2026/</a>
+            <span class="src-title">TechStartups / Reuters — Etched raises $300 million to scale frontier inference hardware. 2026-07-23。</span>
+            <a class="src-url" href="https://techstartups.com/2026/07/23/venture-capital-startup-funding-roundup-july-23-2026/" target="_blank" rel="noopener">techstartups.com</a>
           </li>
           <li id="cite-6">
-            <span class="src-title">TechStartups / Business Wire, "Humanoid raises $152 million at $1.35B valuation". 2026-07-23.</span>
-            <a class="src-url" href="https://techstartups.com/2026/07/21/humanoid-raises-152m-at-1-35b-valuation-to-build-ai-powered-industrial-humanoid-robots/" target="_blank" rel="noopener">https://techstartups.com/2026/07/21/humanoid-raises-152m-at-1-35b-valuation/</a>
+            <span class="src-title">TechStartups / Business Wire — Humanoid raises $152 million at $1.35B valuation. 2026-07-23。</span>
+            <a class="src-url" href="https://techstartups.com/2026/07/21/humanoid-raises-152m-at-1-35b-valuation-to-build-ai-powered-industrial-humanoid-robots/" target="_blank" rel="noopener">techstartups.com</a>
           </li>
           <li id="cite-7">
-            <span class="src-title">University of Cambridge / arXiv, "The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators". 2026.</span>
-            <a class="src-url" href="https://www.cst.cam.ac.uk/news/red-queen-hypothesis-new-way-forward-self-improving-ai" target="_blank" rel="noopener">https://www.cst.cam.ac.uk/news/red-queen-hypothesis-new-way-forward-self-improving-ai</a>
+            <span class="src-title">University of Cambridge — The Red Queen Gödel Machine: Co-Evolving Agents and Their Evaluators. arXiv预印本，2026。</span>
+            <a class="src-url" href="https://www.cst.cam.ac.uk/news/red-queen-hypothesis-new-way-forward-self-improving-ai" target="_blank" rel="noopener">cst.cam.ac.uk</a>
           </li>
           <li id="cite-8">
-            <span class="src-title">中国国家发改委, 《人工智能合作发展行动计划》. 2026世界人工智能大会. 2026-07-17.</span>
-            <a class="src-url" href="https://k.sina.cn/article_7879996057_1d5af329906801ww70.html" target="_blank" rel="noopener">https://k.sina.cn/article_7879996057_1d5af329906801ww70.html</a>
+            <span class="src-title">中国国家发改委 — 《人工智能合作发展行动计划》. 2026世界人工智能大会，2026-07-17。</span>
+            <a class="src-url" href="https://k.sina.cn/article_7879996057_1d5af329906801ww70.html" target="_blank" rel="noopener">sina.com.cn</a>
           </li>
         </ol>
       </div>
     </footer>
-  </div>
+
+  </article>
 </body>
 </html>
