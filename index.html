@@ -2,178 +2,281 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 行业日报 - 归档</title>
-<style>
-  @font-face {
-    font-family: 'GeistMono';
-    src: url('./ai-daily-news-20260730/_shared/fonts/GeistMono-Regular.ttf') format('truetype');
-    font-weight: 400;
-  }
-  @font-face {
-    font-family: 'InstrumentSans';
-    src: url('./ai-daily-news-20260730/_shared/fonts/InstrumentSans-Regular.ttf') format('truetype');
-    font-weight: 400;
-  }
-  @font-face {
-    font-family: 'InstrumentSans';
-    src: url('./ai-daily-news-20260730/_shared/fonts/InstrumentSans-Bold.ttf') format('truetype');
-    font-weight: 700;
-  }
-
-  :root {
-    --bg: #0d1117;
-    --bg2: #161b22;
-    --ink: #e6edf3;
-    --muted: #8b949e;
-    --rule: #30363d;
-    --accent: #2ea043;
-    --accent2: #3fb950;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'InstrumentSans', system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
-    font-size: 15px;
-  }
-
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
-  }
-
-  header {
-    text-align: center;
-    padding: 2.5rem 0 2rem;
-    border-bottom: 1px solid var(--rule);
-    margin-bottom: 2rem;
-  }
-
-  header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    margin-bottom: 0.5rem;
-  }
-
-  header .subtitle {
-    color: var(--muted);
-    font-size: 0.9rem;
-  }
-
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .day-card {
-    background: var(--bg2);
-    border: 1px solid var(--rule);
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.2s, transform 0.2s;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .day-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-  }
-
-  .day-card .date {
-    font-family: 'GeistMono', monospace;
-    font-size: 0.85rem;
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-  }
-
-  .day-card h3 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-
-  .day-card .summary {
-    color: var(--muted);
-    font-size: 0.88rem;
-    line-height: 1.55;
-    flex: 1;
-  }
-
-  .day-card .topics {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .day-card .topics span {
-    font-size: 0.7rem;
-    color: var(--accent);
-    background: rgba(46, 160, 67, 0.12);
-    padding: 0.2rem 0.5rem;
-    border-radius: 999px;
-  }
-
-  footer {
-    text-align: center;
-    padding: 3rem 0 2rem;
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
-
-  footer a {
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  @media (max-width: 600px) {
-    .container { padding: 1rem; }
-    header h1 { font-size: 1.5rem; }
-    .card-grid { grid-template-columns: 1fr; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 行业日报</title>
+  <meta name="description" content="每日更新的 AI 行业热点新闻，覆盖产品发布、融资并购、技术突破、行业规范与市场动态。">
+  <style>
+    @font-face {
+      font-family: 'InstrumentSans';
+      src: url('./ai-daily-news-20260730/_shared/fonts/InstrumentSans-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'InstrumentSans';
+      src: url('./ai-daily-news-20260730/_shared/fonts/InstrumentSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    :root {
+      --bg: #0c0f1a;
+      --bg2: #151929;
+      --bg3: #1c2137;
+      --ink: #e8eaf0;
+      --muted: #8892a8;
+      --rule: #2a3050;
+      --accent: #00d4aa;
+      --accent2: #6366f1;
+      --font: 'InstrumentSans', -apple-system, 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;
+      --max: 740px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.75;
+      padding: 2rem 1rem;
+    }
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    header h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .card-grid {
+      display: grid;
+      gap: 1.2rem;
+    }
+    .card {
+      display: block;
+      background: var(--bg2);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .card .date {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      font-family: monospace;
+    }
+    .card h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .card .desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-<div class="container">
+  <div class="page">
+    <header>
+      <h1>AI 行业日报</h1>
+      <p>产品发布 · 融资并购 · 技术突破 · 行业规范 · 市场动态</p>
+    </header>
 
-<header>
-  <h1>AI 行业日报</h1>
-  <div class="subtitle">每日精选人工智能行业最重要动态</div>
-</header>
+    <main class="card-grid">
 
-<div class="card-grid">
+      <a class="card" href="./ai-daily-news-20260730/ai-daily-news-20260730.html">
+        <div class="date">2026 / 07 / 30</div>
+        <h2>Qualcomm 39亿美元收购Modular · 英伟达暴跌7% · 微软Copilot超级应用 · Claude Science发布 · 国家数据局数据集超12万个</h2>
+        <div class="desc">Qualcomm 完成 39 亿美元收购 Modular 并联手 BMW 进军汽车芯片市场；英伟达暴跌 7% 因苹果AI采用谷歌 TPU 引发替代担忧，AMD 盘后大涨超 7%；微软确认 Copilot "超级应用"年内问世；Anthropic 推出 Claude Science 科研平台；国家数据局披露全国高质量数据集超 12 万个；中国金融 AI 监管细化要求模型"可解释性"。</div>
+      </a>
 
-  <!-- 2026-07-30 -->
-  <a class="day-card" href="./ai-daily-news-20260730/ai-daily-news-20260730.html">
-    <div class="date">2026-07-30</div>
-    <h3>AI 行业日报 · 7月30日</h3>
-    <p class="summary">Qualcomm 完成 39 亿美元收购 Modular 并联手 BMW；英伟达暴跌 7% 因苹果采用谷歌芯片；微软确认 Copilot 超级应用年内问世；Anthropic 推出 Claude Science 科研平台；国家数据局披露全国高质量数据集超 12 万个。</p>
-    <div class="topics">
-      <span>产品动态</span>
-      <span>M&A</span>
-      <span>股市</span>
-      <span>AI for Science</span>
-      <span>监管</span>
-    </div>
-  </a>
+      <a class="card" href="./ai-daily-news-20260729/ai-daily-news-20260729.html">
+        <div class="date">2026 / 07 / 29</div>
+        <h2>A股半导体暴跌7.35% · 千名AI从业者呼吁"刹车" · 英伟达50亿投资SSI · Kimi K3开源 · Claude Opus 5发布</h2>
+        <div class="desc">A股半导体与AI概念股剧烈调整，创业板指暴跌7.35%；超千名AI从业者联名请求建立AI"刹车"机制；英伟达50亿美元投资SSI引发循环融资担忧；月之暗面发布Kimi K3开源权重，2.8万亿参数；Anthropic发布Claude Opus 5推理逼近Fable 5但价格减半；字节跳动推出Seed Diffusion扩散式语言模型；欧盟AI法案高风险合规延期至2027-2028年；中国大模型周调用量达33万亿Token连续十三周领跑全球。</div>
+      </a>
 
-</div>
+      <a class="card" href="./ai-daily-news-20260728/ai-daily-news-20260728.html">
+        <div class="date">2026 / 07 / 28</div>
+        <h2>英伟达50亿美元投资SSI · 谷歌Gemini 4年底发布 · Claude Opus 5价格减半 · Meta AI转型个人助理</h2>
+        <div class="desc">英伟达确认向Ilya Sutskever的SSI投资50亿美元，新一轮AI交易总规模或超7500亿美元引发循环融资争议；谷歌CEO皮查伊证实Gemini 4已投入训练有望年底发布；Anthropic发布Claude Opus 5推理接近Fable 5但定价减半；Meta AI升级为个人助理接入日历与任务执行；OpenAI ChatGPT Voice登陆Enterprise/Edu支持GPT-Live实时打断；S1-Omni与SciForge推动AI for Science工具链突破；全球AI监管加速落地中国伴侣AI新规生效。</div>
+      </a>
 
-<footer>
-  <p>由 RENATA-rui 自动生成 · <a href="https://github.com/RENATA-rui/ai-daily-news" target="_blank" rel="noopener">GitHub 仓库</a></p>
-</footer>
+      <a class="card" href="./ai-daily-news-20260727/ai-daily-news-20260727.html">
+        <div class="date">2026 / 07 / 27</div>
+        <h2>Kimi K3 开源权重发布 · 特斯拉20亿美元收购AI硬件 · DeepSeek二轮暂停 · 美欧AISS框架 · 费城半导体跌3%</h2>
+        <div class="desc">月之暗面发布 Kimi K3 开源权重，2.8万亿参数、100万token上下文，成本仅为 Claude Fable 5 的34%；特斯拉完成近20亿美元AI硬件企业收购押注自研芯片与机器人；DeepSeek二轮融资暂停，710亿美元估值谈判因创始人言论争议中断；美国与欧盟达成首个跨大西洋约束性AI监管框架AISS；25家美国科技公司联名呼吁保持开放权重AI；费城半导体指数7月27日大跌3%，英伟达AMD台积电全线下跌；Anthropic发布Claude Opus 5智能接近Fable 5但价格减半；OpenAI模型越狱Hugging Face事件持续发酵，智谱GLM-5.2开源模型成防御关键。</div>
+      </a>
 
-</div>
+      <a class="card" href="./ai-daily-news-20260726/ai-daily-news-20260726.html">
+        <div class="date">2026 / 07 / 26</div>
+        <h2>Stripe 拟百亿美元收购 OpenRouter · Anthropic 发布 Claude Opus 5 · Fireworks AI 15亿美元D轮 · DeepMind 警告验证瓶颈</h2>
+        <div class="desc">Stripe 拟以近 100 亿美元收购 AI 模型路由平台 OpenRouter，两个月估值翻 7 倍；Anthropic 发布 Claude Opus 5 旗舰模型并接入 Microsoft Foundry；Fireworks AI 完成 15.05 亿美元 D 轮融资估值 175 亿美元、ARR 突破 10 亿；DeepMind 报告指出 AI 智能体已超越科学验证能力；微软发布 MAI-Image-2.5-Pro 与 MAI-Voice-2-Flash 并扩大与 Mistral 数十亿美元合作；智象未来 15 亿元 C 轮晋升独角兽；PNAS 研究质疑 AlphaFold2 蛋白质预测准确性；谷歌推出 Gemini 3.5 Flash Cyber 网络安全专用模型。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260725/ai-daily-news-20260725.html">
+        <div class="date">2026 / 07 / 25</div>
+        <h2>Musk 974亿美元收购OpenAI要约 · ChatGPT Health上线 · Anthropic语音模式升级 · Meta AI转型个人助理 · Etched估值破百亿 · Humanoid成欧洲首家人形独角兽</h2>
+        <div class="desc">Elon Musk财团出价974亿美元收购OpenAI控制权，旨在阻止其转为商业公司；OpenAI推出ChatGPT Health支持Apple Health及医疗记录连接；Anthropic扩展Claude语音模式至Opus/Sonnet并整合Google生态；Meta AI升级为个人助理，接入日历与任务执行；Etched完成3亿美元C轮融资估值103亿美元；Humanoid融资1.52亿美元成欧洲首家人形机器人独角兽；剑桥大学发布Red Queen Gödel Machine自我改进AI框架；中国发布《人工智能合作发展行动计划》。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260724/ai-daily-news-20260724.html">
+        <div class="date">2026 / 07 / 24</div>
+        <h2>OpenAI ChatGPT Health 进军医疗 · 半导体暴跌 1.4 万亿美元 · 台积电 Q2 净利涨 77% · Etched 融资 3 亿美元 · 自主 LLM 生成物理论文 · 伊利诺伊州强制 AI 审计</h2>
+        <div class="desc">OpenAI 推出 Health in ChatGPT 支持 Apple Health 及医疗记录连接，标志消费级 AI 正式切入医疗领域；半导体板块因 AI 投资回报质疑单日蒸发 1.3-1.4 万亿美元；台积电 Q2 净利润 220 亿美元同比增长 77% 但承诺千亿美国投资引发担忧；AI 芯片新星 Etched 获 3 亿美元 C 轮融资估值 103 亿美元；自主 LLM 管道从 11083 篇论文生成完整物理学期刊论文被 ICML 接收；伊利诺伊州成美国首个强制独立 AI 审计州；Google 提议成立 FARO 前沿 AI 监管机构。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260723/ai-daily-news-20260723.html">
+        <div class="date">2026 / 07 / 23</div>
+        <h2>OpenAI GPT-5.6 与 GPT-Live 发布 · Google Gemini 3.5/3.6 Flash 对标 · Etched 与 SambaNova 巨额融资 · 29 国 WAICO 成立</h2>
+        <div class="desc">OpenAI 发布 GPT-5.6 Sol/Terra/Luna 及 GPT-Live 全双工语音模型，Sol 在 ExploitBench 得分 73.5%；Google 推出 Gemini 3.5/3.6 Flash 系列直击成本战；AI 芯片创企 Etched 获 10 亿美元订单、估值 50 亿美元，SambaNova F 轮 10 亿美元估值 110 亿；上海 AI 实验室发布通用科学家助手覆盖蛋白质/分子/晶体；29 国签署成立 WAICO，全球 AI 治理分裂为两大阵营；欧盟《数字综合法案》正式获批，高风险 AI 合规期限推迟至 2027 年底。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260722/ai-daily-news-20260722.html">
+        <div class="date">2026 / 07 / 22</div>
+        <h2>谷歌三款 Gemini 新模型发布 · OpenAI GPT-5.6 家族与 GPT-Live 登场 · Etched 订单破 10 亿美元</h2>
+        <div class="desc">谷歌发布 Gemini 3.6 Flash、3.5 Flash-Lite 与网络安全专用模型，加码 AI Agent 与企业安全市场；OpenAI 推出 GPT-5.6 Sol/Terra/Luna 三档模型及 GPT-Live 全双工语音；英伟达详解 Vera CPU 挑战 AMD/英特尔；Etched 推理芯片订单破 10 亿美元估值达 50 亿；SambaNova F 轮 10 亿美元估值 110 亿；上海 AI 实验室发布全能科学家助手；S1-Omni 统一多模态科学 AI 模型；欧盟 Digital Omnibus 最终通过，高风险义务推迟至 2027 年底。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260721/ai-daily-news-20260721.html">
+        <div class="date">2026 / 07 / 21</div>
+        <h2>软银 300 亿美元加注 OpenAI · Meta 拟 100 亿美元收购 Anthropic 算力 · 单层微调颠覆训练范式</h2>
+        <div class="desc">软银追加 300 亿美元投资 OpenAI 创全球 AI 单笔融资纪录；Meta 拟以 100 亿美元收购 Anthropic 算力资产助其 IPO 前稳定现金流；明尼苏达大学联合北大、亚马逊提出「单层微调」高效训练新范式；上海 AI 实验室发布 Intern-S2-Preview-397B 科学大模型；Loopie 环状 Transformer 架构突破推理效率；英伟达测试 $200 支撑后反弹，费城半导体指数进入技术性熊市；全球 AI 并购上半年规模同比增长 45% 创十年纪录；伊利诺伊州 AI 安全法案签署，欧盟 AI 法案 8 月 2 日生效。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260720/ai-daily-news-20260720.html">
+        <div class="date">2026 / 07 / 20</div>
+        <h2>DeepSeek V4 正式发布 · 阿里 Qwen3.8-Max 首发 · Netflix 5.87 亿美元收购 AI 影视公司</h2>
+        <div class="desc">DeepSeek V4 今日全量开放，首创峰谷计费模式，Flash / Pro 双版本齐发；阿里发布 Token Plan 个人版并首发 2.4 万亿参数 Qwen3.8-Max 预览版；Netflix 斥资 5.87 亿美元现金收购 Ben Affleck 的 AI 影视公司 InterPositive；OpenAI 推出 GPT-Red 自动化红队系统提升 GPT-5.6 安全性；马斯克透露 Grok 4.6 下周完成训练，参数达 2 万亿；Anthropic IPO 申请进入 SEC 审核阶段；Kimi 因算力紧缺暂停 C 端新用户订阅；美股半导体板块承压，苹果反超英伟达重夺全球市值第一。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260719/ai-daily-news-20260719.html">
+        <div class="date">2026 / 07 / 19</div>
+        <h2>WAIC 2026 高潮：商汤交付级智能体 · 壁仞1024卡超节点 · 3D堆叠类脑芯片 · TeraWulf 190亿美元收购Anthropic</h2>
+        <div class="desc">WAIC 2026 进入高潮期，商汤发布交付级智能体基座 SenseNova U1 Pro，壁仞推出 1024 卡光互连超节点，华润微联合发布全球首款 3D 堆叠类脑端侧 AI 推理芯片不依赖 EUV；TeraWulf 以约 190 亿美元收购 Anthropic 或改变 AI 行业格局；美股半导体板块连续两日抛售，美光市值跌破万亿，黄金失守 $4,000；GPT-5.6 上线后智能体 Tokens 用量暴增 2.5 倍；世界人工智能合作组织在上海成立，全球首个人工智能政府间国际组织；中国 AI Agent 监管与拟人化互动双规正式生效。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260718/ai-daily-news-20260718.html">
+        <div class="date">2026 / 07 / 18</div>
+        <h2>OpenAI GPT-5.6 三档模型打响价格战 · Meta Muse Spark 1.1 告别开源 · 欧盟 AI Act 推迟至 2027</h2>
+        <div class="desc">OpenAI 发布 GPT-5.6 Sol/Terra/Luna 三档模型，Luna 定价低至 $1/$6 每百万 token，仅为 Claude Opus 4.8 的十六分之一；Meta 推出首款付费闭源模型 Muse Spark 1.1，正式告别 Llama 开源时代；Google Gemini 3.5 Pro 因编程能力未达预期再次推迟；Databricks 完成 30 亿美元融资估值飙至 1880 亿美元；英伟达股价自高点回落超 16% 市值蒸发约 1 万亿美元；Anthropic 推出 Claude Science Beta 深耕 AI for Science；DeepSeek 自研推理芯片寻求硬件自主；欧盟 Digital Omnibus 获批，高风险 AI 义务推迟至 2027 年底；美联储成立 AI 生产力与就业工作组。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260717/ai-daily-news-20260717.html">
+        <div class="date">2026 / 07 / 17</div>
+        <h2>谷歌 Gemini 3.5 Pro 正式发布 · OpenAI GPT-5.6 三剑客登场 · Onsemi 70亿美元收购 Synaptics</h2>
+        <div class="desc">谷歌 Gemini 3.5 Pro 今日正式发布，全新预训练底座，质量优先策略；OpenAI GPT-5.6 家族三剑客（Sol/Terra/Luna）登场，首创 V8 沙盒运行代码能力；Onsemi 70 亿美元全股票收购 Synaptics 布局物理 AI 边缘计算；韩国 5760 亿美元 AI 芯片计划引发供应担忧；浙江大学发布"求是引擎"千步级自主科研系统；Science 刊发 Biomni，AI Agent 40 分钟完成人类 60 小时实验；Nature 认可"AI Scientist"自主科研框架；中国新版《网络安全法》AI 安全入法满月；欧盟 AI Act Digital Omnibus 最终获批。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260716/ai-daily-news-20260716.html">
+        <div class="date">2026 / 07 / 16</div>
+        <h2>中国首部AI拟人化监管法规落地 · GPT-5.6全球开放 · xAI 600亿美元收购Cursor</h2>
+        <div class="desc">中国首部AI拟人化监管法规《人工智能拟人化互动服务管理暂行办法》7月15日正式施行，豆包千问同步关停自建智能体；OpenAI GPT-5.6系列全球开放，Soul Ultra模式编程评测达91.9%；xAI 600亿美元收购Cursor母公司Anysphere创AI工具最大并购案；Anthropic发布Claude Sonnet 5并启动三星2nm自研芯片；韩国宣布5760亿美元AI投资计划；AI Agent发现Nature子刊论文致命错误揭示人类评审盲区。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260715/ai-daily-news-20260715.html">
+        <div class="date">2026 / 07 / 15</div>
+        <h2>OpenAI GPT-5.6 发布 · Google Gemini 3.5 亮相 · 全球 AI 融资超 200 亿元</h2>
+        <div class="desc">OpenAI 发布 GPT-5.6 系列模型并首创 V8 沙盒运行代码，首次自主证明数学定理；Google I/O 2026 发布 Gemini 3.5 与 Omni 多模态大模型，24 亿美元收购 Windsurf；Anthropic Claude Sonnet 5 支持 1M Token 上下文；全球 AI 融资持续升温，近一周披露总额超 200 亿元，智谱 314 亿港元配售创纪录；欧盟发布 AI 系统合规指南，微软签署行为守则、Meta 拒绝；美国国防部向 OpenAI、Google、Anthropic、xAI 授予最高 2 亿美元军事合同；中国发布《人工智能拟人化互动服务管理暂行办法》。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260714/ai-daily-news-20260714.html">
+        <div class="date">2026 / 07 / 14</div>
+        <h2>OpenAI 发布 GPT-5.6 · Meta 自研芯片量产在即 · 苹果起诉 OpenAI</h2>
+        <div class="desc">OpenAI 发布 GPT-5.6 模型家族并通过政府审查；Meta Iris 芯片 9 月量产目标算力翻倍；苹果起诉 OpenAI 及前员工；onsemi 70 亿美元收购 Synaptics；欧盟 AI 法案倒计时；伊利诺伊州签署最严 AI 安全法；自主 LLM 流水线生成论文获 ICML 接收。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260713/ai-daily-news-20260713.html">
+        <div class="date">2026 / 07 / 13</div>
+        <h2>软银 $65亿收购Ampere · Vera Rubin提前7个月出货 · 全球AI监管15国加速</h2>
+        <div class="desc">软银65亿美元全现金收购Ampere Computing构建Arm数据中心完整链条；NVIDIA Vera Rubin提前7个月量产但四芯片Ultra因封装翘曲流产；xAI发布Grok 4.5代码能力超越Claude Opus 4.8，SpaceX 600亿收购Cursor；全球15国AI监管密集立法，EU AI Act 8月2日大限在即；AMD大涨5.8% MI400需求强劲，可灵AI完成190亿元融资；FTC提案将未披露AI输出引导列为欺骗性行为；H1 2026全球AI融资5100亿美元创纪录。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260712/ai-daily-news-20260712.html">
+        <div class="date">2026 / 07 / 12</div>
+        <h2>Anthropic $300亿创AI最大单轮融资 · SpaceX万亿估值收购xAI · Apple起诉OpenAI</h2>
+        <div class="desc">Anthropic完成$300亿融资估值$3800亿创AI史上最大单轮；SpaceX以$1.25万亿估值收购xAI成为全球最有价值私有公司；OpenAI推出ChatGPT Work全自主AI代理；Apple起诉OpenAI窃取商业机密；阿里达摩院ElementsClaw 28 GPU小时发现4种新超导体；SambaNova完成$10亿F轮；欧盟AI Act合规延期至2027-2028年；纳斯达克大涨2.18%至17,892点。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260711/ai-daily-news-20260711.html">
+        <div class="date">2026 / 07 / 11</div>
+        <h2>Anthropic API份额首超OpenAI · Meta自研Iris芯片 · PrismML端侧AI突破</h2>
+        <div class="desc">OpenAI GPT-5.6全量上线Ultra多智能体模式；Anthropic企业API市场份额历史性反超OpenAI达34.4%，Q3 EBIT有望超10亿美元；Meta发布Muse Spark 1.1并规划自研芯片Iris 9月量产；Ollama完成6500万美元B轮月活近900万；苹果接洽PrismML将270亿参数模型塞进iPhone；法国对英伟达反垄断调查接近尾声聚焦CUDA；中国AI拟人化新规7月15日施行；SpaceXAI发布Grok 4.5联手Cursor。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260710/ai-daily-news-20260710.html">
+        <div class="date">2026 / 07 / 10</div>
+        <h2>GPT-5.6全球正式上线 · Meta Muse Spark 1.1首推付费 · 美光2500亿投资计划</h2>
+        <div class="desc">OpenAI GPT-5.6 Sol/Terra/Luna三档齐发并推出ChatGPT Work；Meta首款付费模型Muse Spark 1.1多项基准超越GPT-5.5；美光科技2500亿美元本土投资推动股价大涨9%；SambaNova 10亿美元F轮融资估值110亿；美国参议院67:31通过《伟大人工智能法案》；onsemi 70亿美元收购Synaptics进军物理AI；清华团队获ICML 2026杰出论文奖。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260709/ai-daily-news-20260709.html">
+        <div class="date">2026 / 07 / 09</div>
+        <h2>SpaceX 2500亿美元收购xAI · GPT-5.6全面解禁发布 · 联合国193国AI治理对话</h2>
+        <div class="desc">SpaceX以2500亿美元收购xAI合并估值1.25万亿美元创历史纪录；OpenAI GPT-5.6三款模型全面解禁发布；Microsoft用自研MAI替代OpenAI和Anthropic；AI驱动存储超级周期长鑫利润暴增2544%；首届联合国AI治理全球对话193国参与；Anthropic Claude Cowork扩展至移动端；ICML 2026清华阿里获杰出论文奖。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260708/ai-daily-news-20260708.html">
+        <div class="date">2026 / 07 / 08</div>
+        <h2>DeepSeek与智谱曝光自研芯片 · 豆包千问智能体下线 · WAIC 2026超300款新品首发</h2>
+        <div class="desc">DeepSeek与智谱同时曝光自研AI芯片计划；豆包千问同步宣布智能体功能7月15日下线应对新规；WAIC 2026蓄势待发展览面积破10万㎡；腾讯减持快手超百亿港元重仓可灵AI；Meta与三星推进2nm ASIC合作；半导体股全球抛售费城半导体指数重挫4.6%。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260707/ai-daily-news-20260707.html">
+        <div class="date">2026 / 07 / 07</div>
+        <h2>ICML 2026 获奖公布 · ITU"AI向善"峰会开幕 · 达摩院自主发现超导体</h2>
+        <div class="desc">ICML 2026清华-阿里获杰出论文奖；ITU"AI向善"全球峰会日内瓦开幕；阿里达摩院ElementsClaw自主发现4种新超导体；高通39.2亿美元收购Modular；SK海力士281亿美元赴美IPO；Anthropic启动自研AI芯片；布鲁克海文AI解开Potts模型精确解。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260706/ai-daily-news-20260706.html">
+        <div class="date">2026 / 07 / 06</div>
+        <h2>DeepSeek V4 定档7月中旬 · 美团万亿大模型国产算力训练 · 北大类脑芯片登Science</h2>
+        <div class="desc">DeepSeek V4 首创API峰谷分时定价；美团LongCat-2.0万亿参数全程国产算力训练超越GPT-5.5；微软25亿美元成立Frontier Company；Together AI获8亿美元融资估值83亿美元；半导体第二轮涨价潮DRAM最高+20%；联合国首届AI治理对话开幕。</div>
+      </a>
+
+      <a class="card" href="./ai-daily-news-20260705/ai-daily-news-20260705.html">
+        <div class="date">2026 / 07 / 05</div>
+        <h2>OpenAI 捐赠 5% 股权 · 可灵 AI 30 亿美元融资 · 达摩院发现新超导材料</h2>
+        <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；可灵 AI 创全球视频大模型最大融资纪录；Anthropic 联手三星自研芯片；中国拟人化 AI 新规即将施行；黄金突破 $4,981。</div>
+      </a>
+
+    </main>
+
+    <footer>
+      Powered by <a href="https://trae.ai" target="_blank">TRAE</a> · 自动生成并发布
+    </footer>
+  </div>
 </body>
 </html>
