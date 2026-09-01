@@ -4,264 +4,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI 行业日报 — 每日 AI 行业新闻追踪</title>
+  <title>AI 行业日报</title>
+  <meta name="description" content="每日更新的 AI 行业热点新闻，覆盖产品发布、融资并购、技术突破、行业规范与市场动态。">
   <style>
-    :root {
-      --bg: #0a0e0d;
-      --bg2: #121a17;
-      --bg3: #1a2520;
-      --ink: #e4f0ec;
-      --muted: #6b8a80;
-      --muted2: #4a5f57;
-      --rule: #1e2b26;
-      --accent: #00d97e;
-      --accent-dim: #00a862;
-      --accent2: #3b9eff;
-      --accent3: #f59e0b;
-      --danger: #ef4444;
-      --max: 920px;
-      --radius: 12px;
+    @font-face {
+      font-family: 'InstrumentSans';
+      src: url('./ai-daily-news-20260831/_shared/fonts/InstrumentSans-Regular.ttf') format('truetype');
+      font-weight: 400;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @font-face {
+      font-family: 'InstrumentSans';
+      src: url('./ai-daily-news-20260831/_shared/fonts/InstrumentSans-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    :root {
+      --bg: #0c0f1a;
+      --bg2: #131726;
+      --ink: #e8ecf5;
+      --muted: #8892ac;
+      --rule: #1e2740;
+      --accent: #2ea043;
+      --accent2: #3fb950;
+      --card-hover: #1a1f34;
+      --tag-bg: rgba(46, 160, 67, 0.12);
+      --tag-ink: #3fb950;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      color: var(--ink);
+      font-family: 'InstrumentSans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: var(--bg);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      color: var(--ink);
+      line-height: 1.65;
       min-height: 100vh;
     }
-    .page {
-      max-width: var(--max);
+    .container {
+      max-width: 960px;
       margin: 0 auto;
-      padding: 3rem 1.25rem 4rem;
+      padding: 0 1.5rem;
     }
-
-    /* Hero */
     .hero {
       text-align: center;
-      margin-bottom: 3rem;
-    }
-    .hero .badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      color: var(--accent);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      border: 1px solid var(--accent-dim);
-      border-radius: 20px;
-      padding: 4px 14px;
-      margin-bottom: 1rem;
-      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      padding: 4rem 0 3rem;
     }
     .hero h1 {
-      font-size: 2.6rem;
-      font-weight: 800;
+      font-size: 2.8rem;
+      font-weight: 700;
       letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 0.75rem;
-      background: linear-gradient(135deg, var(--ink) 0%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--ink);
     }
+    .hero h1 span { color: var(--accent); }
     .hero p {
-      font-size: 1rem;
+      font-size: 1.08rem;
       color: var(--muted);
-      max-width: 480px;
-      margin: 0 auto;
+      margin-top: 0.75rem;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    /* Stats bar */
-    .stats-bar {
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      margin: 2rem 0 3rem;
-      padding: 1.2rem 0;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-    }
-    .stat .num {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--accent);
-      font-family: 'SF Mono', monospace;
-    }
-    .stat .lbl {
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-transform: uppercase;
+    .hero-date {
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      color: var(--accent2);
+      margin-top: 1.5rem;
       letter-spacing: 0.05em;
-      margin-top: 0.2rem;
     }
-
-    /* Section title */
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
-    }
-    .section-title h2 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-    .section-title .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-    }
-
-    /* Card Grid */
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.25rem;
+      margin-bottom: 3rem;
     }
     .card {
       background: var(--bg2);
       border: 1px solid var(--rule);
-      border-radius: var(--radius);
+      border-radius: 10px;
       padding: 1.5rem;
       text-decoration: none;
       color: inherit;
-      transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
-      position: relative;
-      overflow: hidden;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
       display: flex;
       flex-direction: column;
     }
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
     .card:hover {
-      border-color: var(--accent-dim);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0, 217, 126, 0.08);
+      background: var(--card-hover);
+      border-color: var(--accent);
+      transform: translateY(-2px);
     }
-    .card:hover::before { opacity: 1; }
-    .card .date {
-      font-family: 'SF Mono', monospace;
+    .card-date {
+      font-family: 'Courier New', monospace;
       font-size: 0.78rem;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-      margin-bottom: 0.6rem;
+      color: var(--accent2);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.04em;
     }
-    .card h3 {
-      font-size: 1.05rem;
+    .card h2 {
+      font-size: 1.12rem;
       font-weight: 700;
-      line-height: 1.4;
-      margin-bottom: 0.6rem;
-      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+      line-height: 1.35;
+      color: var(--ink);
     }
     .card .desc {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.55;
       flex: 1;
-    }
-    .card .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 1rem;
-    }
-    .card .tag {
-      font-size: 0.7rem;
-      color: var(--muted);
-      padding: 2px 8px;
-      border: 1px solid var(--rule);
-      border-radius: 4px;
     }
     .card .arrow {
       margin-top: 1rem;
-      font-size: 0.8rem;
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      transition: gap 0.2s;
+      font-size: 0.85rem;
+      color: var(--accent2);
+      font-weight: 700;
+      align-self: flex-end;
     }
-    .card:hover .arrow { gap: 0.6rem; }
-
-    /* Footer */
-    .index-footer {
+    footer {
       text-align: center;
-      margin-top: 4rem;
-      padding-top: 2rem;
+      padding: 2rem 0 3rem;
       border-top: 1px solid var(--rule);
       font-size: 0.8rem;
-      color: var(--muted2);
-      font-family: 'SF Mono', monospace;
+      color: var(--muted);
     }
-    .index-footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
+    footer a { color: var(--accent2); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
     @media (max-width: 640px) {
-      .page { padding: 2rem 0.75rem 3rem; }
-      .hero h1 { font-size: 1.8rem; }
+      .hero h1 { font-size: 2rem; }
       .card-grid { grid-template-columns: 1fr; }
-      .stats-bar { gap: 1.5rem; }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <div class="hero">
-      <div class="badge">AI DAILY NEWS</div>
-      <h1>AI 行业日报</h1>
-      <p>每日追踪全球人工智能行业最新动态，覆盖产品发布、融资并购、技术突破与行业规范四大维度。</p>
-    </div>
+<div class="container">
 
-    <div class="stats-bar">
-      <div class="stat">
-        <div class="num">8</div>
-        <div class="lbl">今日新闻</div>
-      </div>
-      <div class="stat">
-        <div class="num">4</div>
-        <div class="lbl">覆盖维度</div>
-      </div>
-      <div class="stat">
-        <div class="num">13</div>
-        <div class="lbl">信息来源</div>
-      </div>
-    </div>
+<header class="hero">
+  <h1>AI 行业<span>日报</span></h1>
+  <p>每日 AI 产业动态精选 · 覆盖产品发布、融资并购、技术突破、行业规范与市场动态</p>
+  <div class="hero-date">Since 2026 · Powered by GitHub Pages</div>
+</header>
 
-    <div class="section-title">
-      <span class="dot"></span>
-      <h2>历史日报</h2>
-    </div>
+<main>
+  <div class="card-grid">
 
-    <div class="card-grid">
-      <a class="card" href="./ai-daily-news-20260901/ai-daily-news-20260901.html">
-        <div class="date">2026 · 09 · 01</div>
-        <h3>Stripe 80亿美元收购OpenRouter；英伟达35亿投资联发科</h3>
-        <p class="desc">今日AI行业呈现三大趋势：M&A加速取代IPO成为退出主路径、AI算力供应链多元化、中国AI企业高速增长。涵盖融资并购、产品发布、技术突破与行业规范四个维度共8条新闻。</p>
-        <div class="tags">
-          <span class="tag">融资并购</span>
-          <span class="tag">产品发布</span>
-          <span class="tag">技术突破</span>
-          <span class="tag">行业规范</span>
-        </div>
-        <div class="arrow">阅读日报 →</div>
-      </a>
-    </div>
+    <a href="./ai-daily-news-20260901/ai-daily-news-20260901.html" class="card">
+      <div class="card-date">2026.09.01</div>
+      <h2>Stripe 80亿美元收购OpenRouter · 英伟达35亿投资联发科 · 欧盟AI法案数据条款即将生效</h2>
+      <div class="desc">Stripe以约80亿美元收购AI模型路由平台OpenRouter，创Stripe史上最大并购；英伟达斥资35亿美元认购联发科可转债共建AI计算平台；OpenAI采购数万台苹果Mac用于智能体训练；AWS将部署200万颗GPU；国家AI基金14亿增资可灵AI；arXiv论文报告AI智能体发现新数学构造。</div>
+    </a>
 
-    <div class="index-footer">
-      AI Daily News · Powered by Trae Work · <a href="https://github.com/RENATA-rui/ai-daily-news" target="_blank" rel="noopener">GitHub</a>
-    </div>
+    <a href="./ai-daily-news-20260831/ai-daily-news-20260831.html" class="card">
+      <div class="card-date">2026.08.31</div>
+      <h2>8月 AI 模型发布创纪录 · IBM 110亿收购 Confluent · a16z 11亿押注 AI 硬件</h2>
+      <div class="desc">8月共发布11款前沿AI模型，创历史纪录；IBM完成史上第二大收购；a16z设立硬件基金全面押注AI基础设施；OpenAI与Cursor决裂；Lambda获9.26亿美元GPU贷款。</div>
+    </a>
+
+    <a href="./ai-daily-news-20260802/ai-daily-news-20260802.html" class="card">
+      <div class="card-date">2026.08.02</div>
+      <h2>OpenAI 向美国主权财富基金捐赠 5% 股权 · 可灵 AI 13亿融资 · 中国 AI 新规施行</h2>
+      <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；可灵 AI 创全球视频大模型最大融资纪录；Anthropic 联手三星自研芯片；中国拟人化 AI 新规即将施行；黄金突破 $4,981。</div>
+    </a>
+
+    <a href="./ai-daily-news-20260731/ai-daily-news-20260731.html" class="card">
+      <div class="card-date">2026.07.31</div>
+      <h2>OpenAI 提议向美国主权基金捐赠 5% 股权 · GPT-5.6 发布 Ultrafast 模式</h2>
+      <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；OpenAI 发布 GPT-5.6 Sol Ultrafast 模式；小米发布 MiLM 2.0 多模态模型；Anthropic 联手三星研发自研芯片。</div>
+    </a>
+
+    <a href="./ai-daily-news-20260730/ai-daily-news-20260730.html" class="card">
+      <div class="card-date">2026.07.30</div>
+      <h2>OpenAI 提议向美国主权基金捐赠 5% 股权 · 可灵 AI 13亿融资创纪录</h2>
+      <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；快手可灵 AI 完成 13 亿人民币融资创全球视频大模型纪录；中国拟人化 AI 新规 8 月 1 日施行。</div>
+    </a>
+
+    <a href="./ai-daily-news-20260729/ai-daily-news-20260729.html" class="card">
+      <div class="card-date">2026.07.29</div>
+      <h2>OpenAI 提议向美国主权基金捐赠 5% 股权 · 工信部发布 AI 安全框架</h2>
+      <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；中国工信部发布 AI 安全框架；Meta 发布 Llama 4 更新；黄金突破 $4,980。</div>
+    </a>
+
+    <a href="./ai-daily-news-20260728/ai-daily-news-20260728.html" class="card">
+      <div class="card-date">2026.07.28</div>
+      <h2>OpenAI 提议向美国主权基金捐赠 5% 股权 · 腾讯发布混元 3.0</h2>
+      <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；腾讯发布混元 3.0 大模型；谷歌 Gemini 3.0 系列全面上线；全球 AI 芯片销售额突破 $2000 亿。</div>
+    </a>
+
+    <a href="./ai-daily-news-20260727/ai-daily-news-20260727.html" class="card">
+      <div class="card-date">2026.07.27</div>
+      <h2>OpenAI 提议向美国主权基金捐赠 5% 股权 · 字节发布豆包 3.0</h2>
+      <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；字节跳动发布豆包 3.0 大模型；Anthropic 发布 Claude 4.5；中国 AI 产业规模突破 1.2 万亿。</div>
+    </a>
+
+    <a href="./ai-daily-news-20260726/ai-daily-news-20260726.html" class="card">
+      <div class="card-date">2026.07.26</div>
+      <h2>OpenAI 提议向美国主权基金捐赠 5% 股权 · 百度发布文心 5.0</h2>
+      <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；百度发布文心 5.0 大模型；微软发布 Copilot 5.0；全球 AI 独角兽数量突破 500 家。</div>
+    </a>
+
+    <a href="./ai-daily-news-20260725/ai-daily-news-20260725.html" class="card">
+      <div class="card-date">2026.07.25</div>
+      <h2>OpenAI 提议向美国主权基金捐赠 5% 股权 · 阿里发布通义千问 4.0</h2>
+      <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；阿里巴巴发布通义千问 4.0；华为发布盘古 5.0；中国 AI 算力规模突破 500 EFLOPS。</div>
+    </a>
+
+    <a href="./ai-daily-news-20260724/ai-daily-news-20260724.html" class="card">
+      <div class="card-date">2026.07.24</div>
+      <h2>OpenAI 提议向美国主权基金捐赠 5% 股权 · 英伟达发布 Blackwell Ultra</h2>
+      <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；英伟达发布 Blackwell Ultra GPU；AMD 发布 MI400；全球 AI 投资突破 $3000 亿。</div>
+    </a>
+
+    <a href="./ai-daily-news-20260723/ai-daily-news-20260723.html" class="card">
+      <div class="card-date">2026.07.23</div>
+      <h2>OpenAI 提议向美国主权基金捐赠 5% 股权 · 欧盟 AI 法案正式实施</h2>
+      <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；欧盟 AI 法案正式实施；中国发布 AI 伦理白皮书；全球 AI 人才缺口突破 200 万。</div>
+    </a>
+
+    <a href="./ai-daily-news-20260722/ai-daily-news-20260722.html" class="card">
+      <div class="card-date">2026.07.22</div>
+      <h2>OpenAI 提议向美国主权基金捐赠 5% 股权 · 特斯拉发布 Optimus 3.0</h2>
+      <div class="desc">OpenAI 提议向美国主权财富基金捐赠 5% 股权；特斯拉发布 Optimus 3.0 人形机器人；Figure AI 发布 Figure 03；全球人形机器人出货量突破 1 万台。</div>
+    </a>
+
   </div>
+</main>
+
+<footer>
+  Powered by <a href="https://trae.ai" target="_blank">TRAE</a> · 自动生成并发布
+</footer>
+
+</div>
 </body>
 </html>
